@@ -17,7 +17,7 @@ if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
     message(FATAL_ERROR "GCC compiler version must be at least 4.8 (current version: ${CMAKE_CXX_COMPILER_VERSION})!")
   endif()
 
-  # Set compiler specific flags:
+  # Set compiler/linker specific flags:
   set(CMAKE_CXX_FLAGS_DEBUG "-Wall -ggdb -std=c++11")
   set(CMAKE_CXX_FLAGS_RELEASE "-w -O3 -std=c++11")
 
@@ -36,6 +36,34 @@ elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
   # Set compiler/linker specific flags:
   set(CMAKE_CXX_FLAGS_DEBUG "-Wall -ggdb -std=c++11 -stdlib=libc++")
   set(CMAKE_CXX_FLAGS_RELEASE "-w -O3 -std=c++11 -stdlib=libc++")
+
+elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
+
+  # Check version. If empty, warn. If too old, error out:
+  if ("${CMAKE_CXX_COMPILER_VERSION}" STREQUAL "")
+    message(WARNING "MSVC compiler version is unknown, proceed at your own risk!")
+  elseif (CMAKE_CXX_COMPILER_VERSION VERSION_LESS 18.0)
+    message(FATAL_ERROR "MSVC compiler version must be at least 18.0 (current version: ${CMAKE_CXX_COMPILER_VERSION})!")
+  endif()
+
+  # Set compiler/linker specific flags:
+  #   Note: Using defaults, overrride if need be.
+  #set(CMAKE_CXX_FLAGS_DEBUG "")
+  #set(CMAKE_CXX_FLAGS_RELEASE "")
+
+elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Intel")
+
+  # Check version. If empty, warn. If too old, error out:
+  if ("${CMAKE_CXX_COMPILER_VERSION}" STREQUAL "")
+    message(WARNING "Intel compiler version is unknown, proceed at your own risk!")
+  elseif (CMAKE_CXX_COMPILER_VERSION VERSION_LESS 14.0)
+    message(FATAL_ERROR "Intel compiler version must be at least 14.0 (current version: ${CMAKE_CXX_COMPILER_VERSION})!")
+  endif()
+
+  # Set compiler/linker specific flags:
+  #   Note: Using defaults, overrride if need be.
+  #set(CMAKE_CXX_FLAGS_DEBUG "")
+  #set(CMAKE_CXX_FLAGS_RELEASE "")
 
 else()
   message(WARNING "The '${CMAKE_CXX_COMPILER_ID}' compiler is untested and unsupported, continue at your own risk!")
