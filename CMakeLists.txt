@@ -21,7 +21,7 @@ set(RELEASE "RELEASE")
 #
 # Project Properties:
 #
-project(skeleton-cpp-project CXX C)
+project(skeleton-cpp-project CXX)
 set(${PROJECT_NAME}_MAJOR_VERSION 1)
 set(${PROJECT_NAME}_MINOR_VERSION 0)
 set(${PROJECT_NAME}_PATCH_VERSION 0)
