@@ -11,4 +11,4 @@ This project has the requirements below mainly because I love to stay up to date
 * C++11 compliant compiler such as:
  + GCC 4.8
 
-To pass specific compiler flags to new compilers, the top-level CMakeLists.txt file will need to be updated to look for the new compilers ID.
+To pass specific compiler flags to new compilers, the top-level CMakeLists.txt file will need to be updated to look for the new compiler's ID.
