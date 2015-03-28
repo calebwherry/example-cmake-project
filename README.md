@@ -14,4 +14,4 @@ This project has the requirements below mainly because I love to stay up to date
  + MSVC 18.0
  + Intel 14.0
 
-To support a new compiler, edit the `cmake/compiler_options.cmake` and add the new compiler ID along with the new compiler flags.
+To support a new compiler, edit the `cmake/compiler_options.cmake` and add the new compiler ID along with the needed compiler flags.
