@@ -1,3 +1,3 @@
 # skeleton-cpp-project
 
-Skeleton project to use for CMake C++ projects.
+Skeleton C++ Project using CMake.
