@@ -21,13 +21,13 @@
 //
 // Compiler includes:
 //
-////
+#include <boost/filesystem.hpp>
 
 
 //
 // Namespaces
 //
-////
+namespace bfs = boost::filesystem;
 
 
 //
@@ -38,6 +38,11 @@ namespace test_print
 
   // Test function:
   void testPrintLibFunction();
+
+  // Print path info:
+  void printPathInfo (
+    const bfs::path&
+  );
 
 } // namespace test_print
 

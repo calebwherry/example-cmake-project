@@ -21,4 +21,6 @@ set(LIB_COMPILER_FLAGS "")
 # Library dependencies:
 #
 set(LIB_LIBRARY_DEPENDS
+  Boost_SYSTEM_LIBRARY
+  Boost_FILESYSTEM_LIBRARY
 )

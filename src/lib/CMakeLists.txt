@@ -59,7 +59,16 @@ foreach(subDir ${subDirs})
 
         # Link libs:
         foreach (libDepend ${LIB_LIBRARY_DEPENDS})
+
+          # Check to see if lib coming back needs to be substituted again. If not, just link it directly:
+          if ("${${libDepend}}" STREQUAL "")
+            set(libDepend "${libDepend}")
+          else()
+            set(libDepend "${${libDepend}}")
+          endif()
+
           target_link_libraries(${libName} LINK_PUBLIC ${libDepend})
+
         endforeach()
 
         # Install lib:

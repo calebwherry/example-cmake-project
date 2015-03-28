@@ -14,6 +14,11 @@
 //
 // Compiler includes:
 //
+
+// boost:
+#include <boost/filesystem.hpp>
+
+// std/STL:
 #include <iostream>
 #include <string>
 
@@ -21,6 +26,7 @@
 //
 // Namespaces:
 //
+namespace bfs = boost::filesystem;
 namespace tp = test_print;
 using namespace std;
 
@@ -37,6 +43,18 @@ int main (int argc, char* argv[])
 
   // Lib print:
   tp::testPrintLibFunction();
+
+  // Path test:
+  if (argc == 2)
+  {
+    // Check path information:
+    bfs::path p(argv[1]);
+    tp::printPathInfo(p);
+  }
+  else
+  {
+    cout << "Incorrect number of arguments given; only one is accepted." << endl;
+  }
 
   // Exit:
   return 0;
