@@ -8,4 +8,5 @@ In its current state, this project has the requirements below. These versions ca
 
 * CMake 3
 * Python 3
-* GCC 4.8
+* C++11 compliant compiler:
+ + GCC 4.8
