@@ -30,18 +30,18 @@
 namespace bfs = boost::filesystem;
 
 
-//
-// Library namespace:
-//
+///
+/// Library namespace:
+///
 namespace test_print
 {
 
-  // Test function:
+  /// Test function
   void testPrintLibFunction();
 
-  // Print path info:
+  /// Print path info
   void printPathInfo (
-    const bfs::path&
+    const bfs::path&            ///< Path to get info for.
   );
 
 } // namespace test_print
