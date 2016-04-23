@@ -14,12 +14,11 @@ addons:
       - ubuntu-toolchain-r-test           # GCC 4.9
       - llvm-toolchain-precise-3.7        # Clang 3.7
       - george-edison55-precise-backports # CMake 3.2
-      - boost-latest
     packages:
       - g++-4.9
       - clang-3.7
-      - libboost-system1.55-dev
-      - libboost-filesystem1.55-dev
+      - libboost-system-dev
+      - libboost-filesystem-dev
       - cmake
       - cmake-data
       - doxygen
