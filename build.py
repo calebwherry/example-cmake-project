@@ -216,7 +216,7 @@ if __name__ == "__main__":
   localOS = system()
 
   # Remove build directories if clean specified:
-  if args.cleanall:
+  if args.clean:
 
     # build dir:
     print("Removing build directory matching 'build_" + args.build_type + "':")
