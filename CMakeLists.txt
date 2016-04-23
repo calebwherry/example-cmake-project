@@ -1,20 +1,20 @@
 ########################################
 ## \file   CMakeLists.txt
 ## \date   01/01/2014
-## \brief  Main project Cmake file.
+## \brief  Main project CMake file.
 ########################################
 
 
 #
 # Minimum CMake version:
 #
-cmake_minimum_required(VERSION 3.0 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
 
 
 #
 # Project Properties:
 #
-project(skeleton-cpp-project CXX)
+project(ExampleCMakeProject CXX)
 set(${PROJECT_NAME}_MAJOR_VERSION 1)
 set(${PROJECT_NAME}_MINOR_VERSION 0)
 set(${PROJECT_NAME}_PATCH_VERSION 0)
@@ -29,9 +29,8 @@ set(${PROJECT_NAME}_VERSION
 
 # Build type:
 if (NOT CMAKE_BUILD_TYPE)
-  set(CMAKE_BUILD_TYPE "DEBUG" CACHE STRING "Build type." FORCE)
+  set(CMAKE_BUILD_TYPE "Debug" CACHE STRING "Build type." FORCE)
 else()
-  string(TOUPPER ${CMAKE_BUILD_TYPE} buildType)
   set(CMAKE_BUILD_TYPE ${buildType} CACHE STRING "Build type." FORCE)
 endif()
 
@@ -51,10 +50,11 @@ endif()
 #
 # Print useful CMake info:
 #
-message(STATUS "Project Version: ${${PROJECT_NAME}_VERSION}")
-message(STATUS "Build type: ${CMAKE_BUILD_TYPE}")
-message(STATUS "Shared libs: ${BUILD_SHARED_LIBS}")
-message(STATUS "Boost Static libs: ${Boost_USE_STATIC_LIBS}")
+message(STATUS "Project           : ${PROJECT_NAME}")
+message(STATUS "Project version   : ${${PROJECT_NAME}_VERSION}")
+message(STATUS "Build type        : ${CMAKE_BUILD_TYPE}")
+message(STATUS "Shared libs       : ${BUILD_SHARED_LIBS}")
+message(STATUS "Boost static libs : ${Boost_USE_STATIC_LIBS}")
 
 
 #
@@ -71,21 +71,11 @@ find_package(
 
 
 #
-# CMake utility functions:
+# CMake Modules:
 #
-include(cmake/utils.cmake)
-
-
-#
-# Project-wide compiler options:
-#
-include(cmake/compiler_options.cmake)
-
-
-#
-# RPATH properties:
-#
-include(cmake/rpath.cmake)
+include(cmake_modules/CompilerOptions.cmake)
+include(cmake_modules/Rpath.cmake)
+include(cmake_modules/Utils.cmake)
 
 
 #

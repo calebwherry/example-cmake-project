@@ -167,9 +167,9 @@ if __name__ == "__main__":
   # Argument parsing:
   #
   parser = argparse.ArgumentParser()
-  parser.add_argument("-b", "--build-type", help="Build type (default: Debug).", choices=["Debug","Release"], default="Debug")
-  parser.add_argument("-c", "--cleanall", help="Remove build directory in current working directory matching 'build/' then continue build", action="store_true")
-  parser.add_argument("-g", "--build-generator", help="Build generator type that CMake produces, see 'cmake --help' for the available options on this platform (default: Cmake decides based on system settings).", type=str, default="")
+  parser.add_argument("-b", "--build-type", help="Build type (default: Debug).", choices=["Debug","Release","RelWithDebInfo"], default="Debug")
+  parser.add_argument("-c", "--cleanall", help="Remove build directory in current working directory matching 'build_${BUILD_TYPE}' then continue build", action="store_true")
+  parser.add_argument("-g", "--build-generator", help="Build generator type that CMake produces, see 'cmake --help' for the available options on this platform (default: CMake decides based on system settings).", type=str, default="")
   parser.add_argument("-i", "--install-prefix", help="Prefix for the install directory.", type=str, default="")
   parser.add_argument("-j", "--num-cpus", help="Number of CPUs for parallel builds (default: number of CPUs on machine)", type=int, default=multiprocessing.cpu_count())
   parser.add_argument("-l", "--log-display", help="Display build log to stdout.", action="store_true")
