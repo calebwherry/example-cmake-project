@@ -16,12 +16,11 @@ addons:
 
 install:
   - pip3 install colorama
-	  
+
 script: 
   - ./build.py -c -b Debug
   - ./build.py -c -b Release
   - ./build.py -c -b RelWithDebInfo
-  
 
 notifications:
   recipients:
