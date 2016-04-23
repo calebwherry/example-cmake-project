@@ -16,7 +16,8 @@ addons:
       - python-pip
 
 install:
-  - pip install colorama
+  - sudo pip install --upgrade pip
+  - sudo pip install colorama
 
 script: 
   - ./build.py -c -b Debug
