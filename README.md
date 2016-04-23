@@ -2,7 +2,7 @@
 
 Example CMake Structure for C++ Projects with Python Build Wrapper
 
-Build: [![Build Status](https://travis-ci.org/calebwherry/example-cmake-project.svg?branch=master)](https://travis-ci.org/calebwherry/example-cmake-project)
+[![Build Status](https://travis-ci.org/calebwherry/example-cmake-project.svg?branch=master)](https://travis-ci.org/calebwherry/example-cmake-project)
 
 ## Requirements
 
