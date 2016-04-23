@@ -169,7 +169,7 @@ if __name__ == "__main__":
   # Argument parsing:
   #
   parser = argparse.ArgumentParser()
-  parser.add_argument("-b", "--build-type", help="Build type (default: Debug).", choices=["Debug","Release","RelWithDebInfo"], default="Debug")
+  parser.add_argument("-b", "--build-type", help="Build type (default: Debug).", choices=["Debug","Release","RelWithDebInfo","MinSizeRel"], default="Debug")
   parser.add_argument("-c", "--cleanall", help="Remove build directory in current working directory matching 'build_${BUILD_TYPE}' then continue build", action="store_true")
   parser.add_argument("-g", "--build-generator", help="Build generator type that CMake produces, see 'cmake --help' for the available options on this platform (default: CMake decides based on system settings).", type=str, default="")
   parser.add_argument("-i", "--install-prefix", help="Prefix for the install directory.", type=str, default="")
