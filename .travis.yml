@@ -12,9 +12,8 @@ addons:
       - ubuntu-toolchain-r-test
     packages:
       - g++-4.9
-      - g++-5.2
-      - cmake
       - libboost-dev
+      - python3-pip
 
 install:
   - pip3 install colorama
