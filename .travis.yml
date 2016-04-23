@@ -18,7 +18,7 @@ addons:
     packages:
       - g++-4.9
       - clang-3.7
-      - libboost-dev
+      - libboost1.55-dev
       - cmake
       - cmake-data
       - doxygen
