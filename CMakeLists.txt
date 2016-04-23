@@ -62,7 +62,7 @@ message(STATUS "Boost static libs : ${Boost_USE_STATIC_LIBS}")
 #
 find_package(
   Boost
-  1.50.0
+  1.50
   COMPONENTS 
     filesystem
     system
