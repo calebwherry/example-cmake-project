@@ -33,6 +33,7 @@ script:
   - ./build.py -c -b Debug
   - ./build.py -c -b Release
   - ./build.py -c -b RelWithDebInfo
+  - ./build.py -c -b MinSizeRel
 
 notifications:
   email:
