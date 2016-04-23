@@ -13,10 +13,10 @@ addons:
     packages:
       - g++-4.9
       - libboost-dev
-      - python3-pip
+      - python-pip
 
 install:
-  - pip3 install colorama
+  - pip install colorama
 
 script: 
   - ./build.py -c -b Debug
