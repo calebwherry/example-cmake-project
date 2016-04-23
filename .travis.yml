@@ -21,6 +21,7 @@ addons:
       - libboost-dev
       - cmake
       - cmake-data
+      - doxygen
 
 # Additional pip installs:
 install:
