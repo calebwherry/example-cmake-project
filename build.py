@@ -2,7 +2,7 @@
 ########################################
 ## \file   build.py
 ## \date   01/01/2014
-## \brief  Automated build script.
+## \brief  Automated build script for C++ projects using CMake.
 ########################################
 
 
