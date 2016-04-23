@@ -11,14 +11,14 @@ env:
 addons:
   apt:
     sources:
-      - ubuntu-toolchain-r-test
-      - llvm-toolchain-precise-3.7
-      - george-edison55-precise-backports # cmake 3.2.3 / doxygen 1.8.3
+      - ubuntu-toolchain-r-test           # GCC 4.9
+      - llvm-toolchain-precise-3.7        # Clang 3.7
+      - george-edison55-precise-backports # CMake 3.2
+      - ppa:apokluda/boost1.53            # Boost 1.53
     packages:
       - g++-4.9
       - clang-3.7
       - libboost-dev
-      - python3-pip
       - cmake
       - cmake-data
 
