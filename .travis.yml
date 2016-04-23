@@ -18,14 +18,14 @@ addons:
       - g++-4.9
       - clang-3.7
       - libboost-dev
-      - python-pip
+      - python3-pip
       - cmake
       - cmake-data
 
 # Additional pip installs:
 install:
-  - sudo pip install --upgrade pip
-  - sudo pip install colorama
+  - pip3 install --upgrade pip
+  - pip3 install colorama
 
 script: 
   - ./build.py -c -b Debug
