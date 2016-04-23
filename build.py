@@ -9,6 +9,8 @@
 #
 # Global imports:
 #
+from __future__ import print_function
+
 import multiprocessing, string, subprocess
 from time import time
 from colorama import init, Fore
