@@ -16,7 +16,7 @@ find_package(Doxygen)
 if (DOXYGEN_FOUND)
 
   configure_file(${CMAKE_CURRENT_LIST_DIR}/Doxyfile.in ${PROJECT_BINARY_DIR}/Doxyfile @ONLY IMMEDIATE)
-  add_custom_target( doc
+  add_custom_target(doc
     ${DOXYGEN_EXECUTABLE} ${PROJECT_BINARY_DIR}/Doxyfile
     WORKING_DIRECTORY ${PROJECT_BINARY_DIR}
     COMMENT "Generating API documentation with Doxygen" VERBATIM

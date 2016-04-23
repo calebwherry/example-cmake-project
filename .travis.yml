@@ -14,7 +14,7 @@ addons:
       - ubuntu-toolchain-r-test           # GCC 4.9
       - llvm-toolchain-precise-3.7        # Clang 3.7
       - george-edison55-precise-backports # CMake 3.2
-      - ppa:apokluda/boost1.53            # Boost 1.53
+      - boost-latest
     packages:
       - g++-4.9
       - clang-3.7
