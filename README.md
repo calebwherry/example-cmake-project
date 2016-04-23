@@ -1,10 +1,8 @@
-# skeleton-cpp-project
+# example-cmake-project
 
-Skeleton C++ Project using CMake.
+Example CMake Structure for C++ Projects with Python Build Wrapper
 
 ## Requirements
-
-This project has the requirements below mainly because I love to stay up to date on the toolsets that I use. The versions can be lowered but the user will have to go through and figure out what needs to be updated.
 
 * CMake 3
 * Python 3
@@ -15,4 +13,4 @@ This project has the requirements below mainly because I love to stay up to date
  + Intel 14.0
 * Boost 1.50.0
 
-To support a new compiler, edit the `cmake/compiler_options.cmake` and add the new compiler ID along with the needed compiler flags.
+To support a new compiler, edit the `cmake_modules/CompilerOptions.cmake` and add the new compiler ID along with the needed compiler flags.
