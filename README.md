@@ -9,8 +9,8 @@ Example CMake Structure for C++ Projects with Python Build Wrapper
 * CMake 3
 * Python 2/3
 * C++11 compliant compiler such as:
- + GCC 4.8
- + Clang 3.5
+ + GCC 4.9
+ + Clang 3.7
  + MSVC 18.0
  + Intel 14.0
 * Boost 1.50.0
