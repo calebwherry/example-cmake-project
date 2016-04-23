@@ -170,12 +170,12 @@ if __name__ == "__main__":
   #
   parser = argparse.ArgumentParser()
   parser.add_argument("-b", "--build-type", help="Build type (default: Debug).", choices=["Debug","Release","RelWithDebInfo","MinSizeRel"], default="Debug")
-  parser.add_argument("-c", "--cleanall", help="Remove build directory in current working directory matching 'build_${BUILD_TYPE}' then continue build", action="store_true")
+  parser.add_argument("-c", "--clean", help="Remove build directory in current working directory matching 'build_${BUILD_TYPE}' then continue build", action="store_true")
   parser.add_argument("-g", "--build-generator", help="Build generator type that CMake produces, see 'cmake --help' for the available options on this platform (default: CMake decides based on system settings).", type=str, default="")
   parser.add_argument("-i", "--install-prefix", help="Prefix for the install directory.", type=str, default="")
   parser.add_argument("-j", "--num-cpus", help="Number of CPUs for parallel builds (default: number of CPUs on machine)", type=int, default=multiprocessing.cpu_count())
   parser.add_argument("-l", "--log-display", help="Display build log to stdout.", action="store_true")
-  parser.add_argument("-n", "--build-dir-name", help="Name of the build directory created (default: 'build')", type=str, default="build")
+  parser.add_argument("-n", "--build-dir-name", help="Name of the build directory created (default: 'build_${BUILD_TYPE}')", type=str, default="")
   parser.add_argument("-r", "--remove-build", help="Remove current build directory after completion.", action="store_true")
   parser.add_argument("-s", "--static-libs", help="Build and link libraries static instead of shared.", action="store_true")
   args = parser.parse_args()
@@ -219,8 +219,8 @@ if __name__ == "__main__":
   if args.cleanall:
 
     # build dir:
-    print("Removing build directory matching 'build/':")
-    buildDirs = glob('build/')
+    print("Removing build directory matching 'build_" + args.build_type + "':")
+    buildDirs = glob('build_' + args.build_type)
     buildDirs = filter(path.isdir, buildDirs)
     for dir in buildDirs:
       print(Fore.RED + "\t" + dir)
@@ -229,7 +229,11 @@ if __name__ == "__main__":
     print('')
 
   # Create build directories:
-  buildRoot = path.join(currentPath, args.build_dir_name)
+  buildRoot = ""
+  if args.build_type == "":
+    buildRoot = path.join(currentPath, "build_" + args.build_type)
+  else:
+    buildRoot = path.join(currentPath, args.build_dir_name)
   buildDir = path.join(buildRoot, 'build-files')
 
   # Try and create build directory. If it exists, use dir and rebuild.
@@ -266,7 +270,7 @@ if __name__ == "__main__":
   logFile = path.join(buildRoot, 'build.log')
   log = open(logFile, 'w');
 
-  # Check number of cpus:
+  # Check number of CPUs:
   if args.num_cpus <= 2:
     args.num_cpus = 1
   elif (args.num_cpus > 2) and (args.num_cpus <= 4):
@@ -284,7 +288,7 @@ if __name__ == "__main__":
     "-DBUILD_SHARED_LIBS:BOOL=" + sharedLibs,
     "-DCMAKE_INSTALL_SO_NO_EXE=0"
   ]
-  if (args.build_generator != ""):
+  if args.build_generator != "":
     cmakeCmd.append("-G" + args.build_generator)
 
   # On all platforms, we at least have to run cmake first to get build files:
