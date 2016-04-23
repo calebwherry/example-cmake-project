@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 ########################################
 ## \file   build.py
 ## \date   01/01/2014
