@@ -3,11 +3,20 @@ language: cpp
 compiler:
   - gcc
   - clang
-  
-before_install:
-  - sudo apt-get update
-  - sudo apt-get install cmake libboost-dev
-  
+ 
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-4.9
+      - g++-5.2
+      - cmake
+      - libboost-dev
+
+install:
+  - pip3 install colorama
+	  
 script: 
   - ./build.py -c -b Debug
   - ./build.py -c -b Release
