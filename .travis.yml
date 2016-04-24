@@ -19,7 +19,7 @@ matrix:
       osx_image: xcode7.2
       language: generic
       env:
-        - CC="clang-3.7" CXX="clang++-3.7" TOXENV=py34
+        - CC="clang-3.7" CXX="clang++-3.7"
 
 # Additional apt-get installs for linux:
 addons:
@@ -37,11 +37,9 @@ addons:
 
 # Additional installs:
 install:
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; fi
-  - which python
-  - python --version
-#  - pip install --upgrade pip
-#  - pip install colorama
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; sudo easy_install pip; fi
+  - pip install --upgrade pip
+  - pip install colorama
 
 # Build:
 script:
