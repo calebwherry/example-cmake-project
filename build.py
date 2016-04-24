@@ -241,7 +241,7 @@ if __name__ == "__main__":
     buildDirName = args.build_dir_name
 
   buildRoot = path.join(currentPath, buildDirName)
-  buildDir = path.join(buildRoot, 'build-files')
+  buildDir = path.join(buildRoot, 'build')
 
   # Try and create build directory. If it exists, use dir and rebuild.
   reBuild = False;
@@ -258,7 +258,7 @@ if __name__ == "__main__":
 
   # Create install directory if prefix was not supplied:
   if args.install_prefix == "":
-    installDir = path.join(buildRoot, 'install-files')
+    installDir = path.join(buildRoot, 'local-install')
     if not reBuild:
       mkdir(installDir)
   else:
