@@ -15,6 +15,10 @@ branches:
 # Operating system (build VM template)
 os: Visual Studio 2015
 
+# Init:
+init:
+  - "echo %PYTHON%"
+ 
 # Install:
 install:
   - "%PYTHON%/Scripts/pip3.exe" install colorama
