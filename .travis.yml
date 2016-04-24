@@ -18,8 +18,8 @@ addons:
     packages:
       - g++-4.9
       - clang-3.7
-      - libboost1.55-system-dev
-      - libboost1.55-filesystem-dev
+      - libboost-system1.55-dev
+      - libboost-filesystem1.55-dev
       - cmake
       - cmake-data
       - doxygen
