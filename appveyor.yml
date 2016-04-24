@@ -17,7 +17,6 @@ os: Visual Studio 2015
 
 # Install:
 install:
-  - "%PYTHON%/Scripts/pip.exe install --upgrade pip"
   - "%PYTHON%/Scripts/pip.exe install colorama"
 
 # Build:
