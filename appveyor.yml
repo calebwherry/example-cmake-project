@@ -20,8 +20,8 @@ init:
   - "echo %PYTHON%"
  
 # Install:
-#install:
-  - "%PYTHON%/Scripts/pip3.exe install colorama"
+install:
+  - "%PYTHON%/Scripts/pip.exe install colorama"
 
 # Build:
 build_script:

@@ -37,7 +37,7 @@ addons:
 
 # Additional installs:
 install:
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; brew install python-pip; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; sudo python get-pip.py; fi
   - which python
   - which pip
   - pip install --upgrade pip
