@@ -17,8 +17,8 @@ os: Visual Studio 2015
 
 # Install:
 install:
-  - pip3 install --upgrade pip
-  - pip3 install colorama
+  - pip install --upgrade pip
+  - pip install colorama
 
 # Build:
 build_script:
