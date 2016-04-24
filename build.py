@@ -123,7 +123,6 @@ def unixBuild(log, args):
   # Execute build commands:
   sysCall(["make", "-j"+str(args.num_cpus)], log, "\t")
   #sysCall(["make", "-j"+str(args.num_cpus), "test"], log, "\t")
-  sysCall(["make", "-j"+str(args.num_cpus), "doc"], log, "\t")
   sysCall(["make", "-j"+str(args.num_cpus), "install"], log, "\t")
 
   print('UNIX build complete!')
