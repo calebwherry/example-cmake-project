@@ -30,3 +30,12 @@ build_script:
   - cmd: "%PYTHON%/python.exe" build.py -c -b Release
   - cmd: "%PYTHON%/python.exe" build.py -c -b RelWithDebInfo
   - cmd: "%PYTHON%/python.exe" build.py -c -b MinSizeRel
+  
+# Notifications:
+notifications:
+  - provider: Email
+    to:
+      - calebwherry@gmail.com
+    on_build_success: false
+    on_build_failure: true
+    on_build_status_changed: true
