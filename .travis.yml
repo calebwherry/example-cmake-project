@@ -38,6 +38,8 @@ addons:
 # Additional installs:
 install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; fi
+  - which python
+  - which pip
   - pip3 install --upgrade pip
   - pip3 install colorama
 
