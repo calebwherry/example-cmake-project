@@ -84,7 +84,7 @@ def sysCall(cmds, log, pad="", shellExec=False):
     print(Fore.RED + 'ERROR!!! Please see log output below!')
     displayLog(log)
     completeScript(1)
-  print(Fore.GREEN + 'done! ' + elapsedTime(beginTime,endTime))
+  print(Fore.GREEN + 'done. ' + elapsedTime(beginTime,endTime))
 
 
 
@@ -215,25 +215,28 @@ if __name__ == "__main__":
   # Get OS:
   localOS = system()
 
+  # Construct correct build directory name:
+  buildDirName = ""
+  if args.build_dir_name == "":
+    buildDirName = "build_" + args.build_type
+  else:
+    buildDirName = args.build_dir_name
+  
   # Remove build directories if clean specified:
   if args.clean:
-
-    # build dir:
-    print("Removing build directory matching 'build_" + args.build_type + "':")
-    buildDirs = glob('build_' + args.build_type)
-    buildDirs = filter(path.isdir, buildDirs)
-    for dir in buildDirs:
-      print(Fore.RED + "\t" + dir)
-      rmtree(dir)
-    print(Fore.GREEN + 'done!')
+    print("Removing build directory '" + buildDirName + "'... ", end='')
+    rmtree(buildDirName)
+    print(Fore.GREEN + 'done.')
     print('')
 
   # Create build directories:
-  buildRoot = ""
-  if args.build_type == "":
-    buildRoot = path.join(currentPath, "build_" + args.build_type)
+  buildDirName = ""
+  if args.build_dir_name == "":
+    buildDirName = "build_" + args.build_type
   else:
-    buildRoot = path.join(currentPath, args.build_dir_name)
+    buildDirName = args.build_dir_name
+
+  buildRoot = path.join(currentPath, buildDirName)
   buildDir = path.join(buildRoot, 'build-files')
 
   # Try and create build directory. If it exists, use dir and rebuild.
@@ -243,7 +246,7 @@ if __name__ == "__main__":
     mkdir(buildDir)
   except:
     reBuild = True;
-    print("Build directory '" + args.build_dir_name + "' already exists; re-running build process.")
+    print("Build directory '" + buildRoot + "' already exists; re-running build process.")
     print('')
 
   # Diplay build directory to screen:
@@ -315,7 +318,7 @@ if __name__ == "__main__":
   if args.remove_build:
     print('Removing current build directory...', end=' ')
     rmtree(buildRoot)
-    print(Fore.GREEN + 'done!')
+    print(Fore.GREEN + 'done.')
     print('')
 
   # Exit cleanly:
