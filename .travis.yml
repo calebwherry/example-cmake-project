@@ -2,6 +2,8 @@ language: python
 
 # Build matrix:
 matrix:
+  allow_failures:
+    - os: osx
   include:
     - os: linux
       sudo: required
