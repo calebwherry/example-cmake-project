@@ -229,7 +229,7 @@ if __name__ == "__main__":
       rmtree(buildDirName)
       print(Fore.GREEN + 'done.')
       print('')
-	else:
+    else:
 	  print("No build directory to clean.")
 	  print('')
 
