@@ -37,9 +37,10 @@ addons:
 
 # Additional installs:
 install:
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; sudo easy_install pip; fi
-  - sudo pip install --upgrade pip
-  - sudo pip install colorama
+  - SUDO=""
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; sudo easy_install pip; SUDO="sudo"; fi
+  - ${SUDO} pip install --upgrade pip
+  - ${SUDO} pip install colorama
 
 # Build:
 script:
