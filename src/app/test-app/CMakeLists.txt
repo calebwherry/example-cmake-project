@@ -4,24 +4,20 @@
 ## \brief  test-app: App CMake file.
 ########################################
 
+# Set app name and app directory:
+set(appName "TestApp")
+set(appDir "${CMAKE_CURRENT_LIST_DIR}")
 
-#
-# Compile this app?
-#
-set(COMPILE_APP True)
-
-
-#
-# App compiler flags:
-#
-set(APP_COMPILER_FLAGS "")
-
-
-#
-# Library dependencies:
-#
-set(APP_LIBRARY_DEPENDS
-  TestPrint
-  Boost_SYSTEM_LIBRARY
-  Boost_FILESYSTEM_LIBRARY
+# Create executable:
+add_executable(${appName}
+	"test-app.cpp"
 )
+
+# Link libs:
+target_link_libraries(${appName} LINK_PUBLIC
+	TestPrint
+#	${Boost_LIBRARIES}
+)
+
+# Install app:
+install(TARGETS ${appName} RUNTIME DESTINATION bin)

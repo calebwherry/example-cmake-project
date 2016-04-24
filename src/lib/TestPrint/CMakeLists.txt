@@ -4,23 +4,33 @@
 ## \brief  Test Lib CMake file.
 ########################################
 
+# Set lib name and lib directory:
+set(libName "TestPrint")
+set(libDir "${CMAKE_CURRENT_LIST_DIR}")
 
-#
-# Compile this lib?
-#
-set(COMPILE_LIB True)
-
-
-#
-# Library compiler flags:
-#
-set(LIB_COMPILER_FLAGS "")
-
-
-#
-# Library dependencies:
-#
-set(LIB_LIBRARY_DEPENDS
-  Boost_SYSTEM_LIBRARY
-  Boost_FILESYSTEM_LIBRARY
+# Explicitly specify source/headers:
+set(Headers
+	"TestPrint.hpp"
 )
+
+set(Sources
+	"TestPrint.cpp"
+)
+
+# Create source group:
+source_group("Headers" FILES ${Headers})
+source_group("Sources" FILES ${Sources})
+
+# Create library:
+add_library(${libName}
+	${Headers}
+	${Sources}
+)
+
+# Includes and link libs:
+target_include_directories(${libName} PUBLIC ${libDir})
+#target_link_libraries(${libName} LINK_PUBLIC ${Boost_LIBRARIES})
+
+# Install artifacts:
+install(TARGETS ${libName} DESTINATION lib)
+install(FILES ${Headers} DESTINATION include)

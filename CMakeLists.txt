@@ -76,6 +76,7 @@ find_package(
     system
   REQUIRED
 )
+include_directories(${Boost_INCLUDE_DIRS})
 
 
 #

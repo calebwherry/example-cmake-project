@@ -4,5 +4,14 @@
 ## \brief  Source-level Cmake file.
 ########################################
 
-add_subdirectory(lib)
-add_subdirectory(app)
+
+#
+# Libs:
+#
+add_subdirectory(lib/TestPrint)
+
+
+#
+# Apps:
+#
+add_subdirectory(app/test-app)
