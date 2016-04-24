@@ -6,6 +6,18 @@
 
 
 #
+# OS-specific compiler definitions:
+#
+if (MAC)
+  add_definitions(-DUNIX -DMAC)
+elseif (LINUX)
+  add_definitions(-DUNIX -DLINUX)
+elseif (WINDOWS)
+  add_definitions(-DWINDOWS)
+endif()
+
+
+#
 # Project-wide compiler flags:
 #
 if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
@@ -17,6 +29,16 @@ if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
     message(FATAL_ERROR "GCC compiler version must be at least 4.9 (current version: ${CMAKE_CXX_COMPILER_VERSION})!")
   endif()
 
+  # Set compiler CMake vars:
+  set(GCC 1)
+  set(CLANG 0)
+  set(MSVC 0)
+  set(INTEL 0)
+  set(COMPILER "GCC")
+  
+  # Add compiler-specific definitions:
+  add_definitions(-DGCC)
+  
   # Set compiler/linker specific flags:
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
   #set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS}")
@@ -31,6 +53,16 @@ elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
     message(FATAL_ERROR "Clang compiler version must be at least 3.7 (current version: ${CMAKE_CXX_COMPILER_VERSION})!")
   endif()
 
+  # Set compiler CMake vars:
+  set(GCC 0)
+  set(CLANG 1)
+  set(MSVC 0)
+  set(INTEL 0)
+  set(COMPILER "CLANG")
+  
+  # Add compiler-specific definitions:
+  add_definitions(-DCLANG)
+  
   # Set compiler/linker specific flags:
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
   #set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS}")
@@ -45,6 +77,16 @@ elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
     message(FATAL_ERROR "MSVC compiler version must be at least 18.0 (current version: ${CMAKE_CXX_COMPILER_VERSION})!")
   endif()
 
+  # Set compiler CMake vars:
+  set(GCC 0)
+  set(CLANG 0)
+  set(MSVC 1)
+  set(INTEL 0)
+  set(COMPILER "MSVC")
+  
+  # Add compiler-specific definitions:
+  add_definitions(-DMSVC)
+  
   # Set compiler/linker specific flags:
   # Note: Using defaults.
   #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
@@ -60,6 +102,16 @@ elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Intel")
     message(FATAL_ERROR "Intel compiler version must be at least 14.0 (current version: ${CMAKE_CXX_COMPILER_VERSION})!")
   endif()
 
+  # Set compiler CMake vars:
+  set(GCC 0)
+  set(CLANG 0)
+  set(MSVC 0)
+  set(INTEL 1)
+  set(COMPILER "INTEL")
+  
+  # Add compiler-specific definitions:
+  add_definitions(-DINTEL)
+  
   # Set compiler/linker specific flags:
   # Note: Using defaults.
   #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")

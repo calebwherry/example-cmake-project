@@ -6,13 +6,26 @@
 
 #pragma once
 
+
+//
+// API entry point:
+//
+#ifdef WINDOWS
+#define PUBLIC_API __declspec(dllexport)
+#else
+#define PUBLIC_API
+#endif
+
+
 ///
 /// Library namespace
 ///
 namespace test_print
 {
 
-  /// Test print
-  __declspec(dllexport) void TestPrint();
+
+/// Test print
+PUBLIC_API void TestPrint();
+
 
 } // namespace test_print

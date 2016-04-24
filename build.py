@@ -177,7 +177,7 @@ if __name__ == "__main__":
   parser.add_argument("-l", "--log-display", help="Display build log to stdout.", action="store_true")
   parser.add_argument("-n", "--build-dir-name", help="Name of the build directory created (default: 'build_${BUILD_TYPE}')", type=str, default="")
   parser.add_argument("-r", "--remove-build", help="Remove current build directory after completion.", action="store_true")
-  parser.add_argument("-s", "--static-libs", help="Build and link libraries static instead of shared.", action="store_true")
+  parser.add_argument("-s", "--static-build", help="Build and link libraries static instead of shared.", action="store_true")
   args = parser.parse_args()
 
 
@@ -265,7 +265,7 @@ if __name__ == "__main__":
     installDir = path.join(args.install_prefix)
 
   # Set library build type:
-  if args.static_libs:
+  if args.static_build:
     sharedLibs = "OFF"
   else:
     sharedLibs = "ON"

@@ -2,7 +2,7 @@
 
 # Build project:
 echo "-> Building project..."
-./build.py --clean --build-type="Debug" --build-generator="Unix Makefiles"
+./build.py --clean --build-type="Debug" --build-generator="Unix Makefiles" --static-build
 
 # Run build binary:
 echo "-> Running project binary..."

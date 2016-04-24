@@ -15,7 +15,6 @@
 // Compiler includes:
 //
 #include <iostream>
-#include <string>
 
 
 //
@@ -30,10 +29,10 @@ using namespace std;
 namespace test_print
 {
 
-  // Test lib function:
-  void TestPrint()
-  {
-    cout << "Hello, world! (From the TestPrint library)" << endl;
-  }
+// Test lib function:
+void TestPrint()
+{
+  cout << "Hello, world! (From the TestPrint library)" << endl;
+}
 
 } // namespace test_print
