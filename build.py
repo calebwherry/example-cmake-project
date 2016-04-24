@@ -290,10 +290,10 @@ if __name__ == "__main__":
   # Build up CMake command based on CLI options:
   cmakeCmd = [
     "cmake", scriptPath,
-    "-DCMAKE_INSTALL_PREFIX='" + installDir + "'",
-    "-DCMAKE_BUILD_TYPE=" + args.build_type,
+    "-DCMAKE_INSTALL_PREFIX:STRING='" + installDir + "'",
+    "-DCMAKE_BUILD_TYPE:STRING=" + args.build_type,
     "-DBUILD_SHARED_LIBS:BOOL=" + sharedLibs,
-    "-DCMAKE_INSTALL_SO_NO_EXE=0"
+    "-DCMAKE_INSTALL_SO_NO_EXE:BOOL=OFF"
   ]
   if args.build_generator != "":
     cmakeCmd.append("-G" + args.build_generator)
