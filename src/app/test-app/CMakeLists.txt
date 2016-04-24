@@ -16,7 +16,8 @@ add_executable(${appName}
 # Link libs:
 target_link_libraries(${appName} LINK_PUBLIC
 	TestPrint
-#	${Boost_LIBRARIES}
+	${Boost_FILESYSTEM_LIBRARY}
+	${Boost_SYSTEM_LIBRARY}
 )
 
 # Install app:
