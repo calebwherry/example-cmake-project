@@ -8,7 +8,7 @@ branches:
 os: Visual Studio 2015
 
 # Build:
-build:
+build_script:
   - cmd: example-run-Win-VS2015.bat
   - cmd: ./build.py -c -b Debug
   - cmd: ./build.py -c -b Release
