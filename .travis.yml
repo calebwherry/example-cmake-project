@@ -1,13 +1,32 @@
 language: python
-python: 3.4
-sudo: required
+#python: 3.4
+#sudo: required
+
+
+matrix:
+  include:
+    - os: linux
+      sudo: required
+      python: 3.4
+      env:
+        - CC="gcc-5" CXX="g++-5"
+        - CC="clang-3.7" CXX="clang++-3.7"
+    - os: osx
+      python: 3.4
+      osx_image: xcode7.2
+      env:
+        - CC="clang-3.7" CXX="clang++-3.7"
+
+#os:
+#  - linux
+#  - osx
 
 # Build matrix:
-env:
-  - CC="gcc-5" CXX="g++-5"
-  - CC="clang-3.7" CXX="clang++-3.7"
+#env:
+#  - CC="gcc-5" CXX="g++-5"
+#  - CC="clang-3.7" CXX="clang++-3.7"
 
- # Additional apt-get installs:
+ # Additional apt-get installs for linux:
 addons:
   apt:
     sources:
@@ -21,11 +40,13 @@ addons:
       - cmake-data
       - doxygen
 
-# Additional pip installs:
+# Additional installs:
 install:
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; brew install python python3-pip; fi
   - pip3 install --upgrade pip
   - pip3 install colorama
 
+# Build:
 script:
   - ./example-run-Unix-Makefiles.sh
   - ./build.py -c -b Debug
@@ -33,6 +54,7 @@ script:
   - ./build.py -c -b RelWithDebInfo
   - ./build.py -c -b MinSizeRel
 
+# Notifications:
 notifications:
   email:
     recipients:
