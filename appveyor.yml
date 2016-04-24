@@ -17,7 +17,7 @@ os: Visual Studio 2015
 
 # Install:
 install:
-  - "%PYTHON%/Scripts/pip.exe install colorama"
+  - "%PYTHON%/Scripts/pip3.exe install colorama"
 
 # Build:
 build_script:
