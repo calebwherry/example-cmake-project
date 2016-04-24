@@ -2,8 +2,9 @@
 
 Example CMake Structure for C++ Projects with Python Build Wrapper
 
-Linux + Mac: [![Build Status](https://travis-ci.org/calebwherry/example-cmake-project.svg?branch=master)](https://travis-ci.org/calebwherry/example-cmake-project)
-Windows: [![Build status](https://ci.appveyor.com/api/projects/status/41xl917ixa8olab4?svg=true)](https://ci.appveyor.com/project/calebwherry/example-cmake-project)
+Linux + Mac (Travis CI): [![Build Status](https://travis-ci.org/calebwherry/example-cmake-project.svg?branch=master)](https://travis-ci.org/calebwherry/example-cmake-project)
+
+Windows (AppVeyor): [![Build status](https://ci.appveyor.com/api/projects/status/41xl917ixa8olab4?svg=true)](https://ci.appveyor.com/project/calebwherry/example-cmake-project)
 
 ## Requirements (oldest versions tested are given)
 
