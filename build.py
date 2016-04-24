@@ -222,12 +222,16 @@ if __name__ == "__main__":
   else:
     buildDirName = args.build_dir_name
   
-  # Remove build directories if clean specified:
+  # Remove build directory if exists and clean specified:
   if args.clean:
-    print("Removing build directory '" + buildDirName + "'... ", end='')
-    rmtree(buildDirName)
-    print(Fore.GREEN + 'done.')
-    print('')
+    if path.exists(buildDirName):
+      print("Removing build directory '" + buildDirName + "'... ", end='')
+      rmtree(buildDirName)
+      print(Fore.GREEN + 'done.')
+      print('')
+	else:
+	  print("No build directory to clean.")
+	  print('')
 
   # Create build directories:
   buildDirName = ""
