@@ -1,8 +1,6 @@
 language: python
-#python: 3.4
-#sudo: required
 
-
+# Build matrix:
 matrix:
   include:
     - os: linux
@@ -16,21 +14,12 @@ matrix:
       env:
         - CC="clang-3.7" CXX="clang++-3.7"
     - os: osx
-      python: 3.4
+      python: 3.2
       osx_image: xcode7.2
       env:
-        - CC="clang-3.7" CXX="clang++-3.7" TOXENV=py34
+        - CC="clang-3.7" CXX="clang++-3.7" TOXENV=py32
 
-#os:
-#  - linux
-#  - osx
-
-# Build matrix:
-#env:
-#  - CC="gcc-5" CXX="g++-5"
-#  - CC="clang-3.7" CXX="clang++-3.7"
-
- # Additional apt-get installs for linux:
+# Additional apt-get installs for linux:
 addons:
   apt:
     sources:
