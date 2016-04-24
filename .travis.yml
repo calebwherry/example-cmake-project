@@ -39,7 +39,7 @@ addons:
 # Additional installs:
 install:
   - SUDO="" # Lame workaround for differences between Linux/OSX pip install on Travis CI
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; brew tap homebrew/versions; brew install gcc5 llvm37 cmake; sudo easy_install pip; SUDO="sudo"; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; brew tap homebrew/versions; brew install gcc5 llvm37 cmake doxygen; sudo easy_install pip; SUDO="sudo"; fi
   - ${SUDO} pip install --upgrade pip
   - ${SUDO} pip install colorama
 
