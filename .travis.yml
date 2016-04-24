@@ -29,7 +29,8 @@ install:
   - pip3 install --upgrade pip
   - pip3 install colorama
 
-script: 
+script:
+  - ./example-run-Unix-Makefiles.sh
   - ./build.py -c -b Debug
   - ./build.py -c -b Release
   - ./build.py -c -b RelWithDebInfo
