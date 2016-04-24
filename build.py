@@ -230,8 +230,8 @@ if __name__ == "__main__":
       print(Fore.GREEN + 'done.')
       print('')
     else:
-	  print("No build directory to clean.")
-	  print('')
+      print("No build directory to clean.")
+      print('')
 
   # Create build directories:
   buildDirName = ""
