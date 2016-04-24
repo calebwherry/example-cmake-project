@@ -15,6 +15,7 @@ set(Headers
 
 set(Sources
 	"TestPrint.cpp"
+  "${OS_FULL}/TestPrintForOS.cpp"
 )
 
 # Create source group:

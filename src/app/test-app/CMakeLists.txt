@@ -5,7 +5,7 @@
 ########################################
 
 # Set app name and app directory:
-set(appName "TestApp")
+set(appName "test-app")
 set(appDir "${CMAKE_CURRENT_LIST_DIR}")
 
 # Create executable:

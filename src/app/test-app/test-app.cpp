@@ -33,6 +33,7 @@ int main (int argc, char* argv[])
   // Test prints:
   cout << "Hello, world!" << endl;
   tp::TestPrint();
+  tp::TestPrintForOS();
 
   // Exit:
   return 0;

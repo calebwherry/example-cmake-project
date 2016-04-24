@@ -7,7 +7,7 @@ call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" x64
 
 REM Run build binary:
 echo "-> Running project binary..."
-build_Debug\local-install\bin\TestApp
+build_Debug\local-install\bin\test-app.exe
 
 REM Exit:
 timeout /t 10

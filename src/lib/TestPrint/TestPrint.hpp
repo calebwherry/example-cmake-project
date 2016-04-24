@@ -28,4 +28,8 @@ namespace test_print
 PUBLIC_API void TestPrint();
 
 
+/// OS-specific Print (implementations for each platform are in different translation units)
+PUBLIC_API void TestPrintForOS();
+
+
 } // namespace test_print
