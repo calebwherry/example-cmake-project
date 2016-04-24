@@ -9,9 +9,9 @@ Windows (AppVeyor): [![Build status](https://ci.appveyor.com/api/projects/status
 ## Requirements (oldest versions tested are given)
 
 * CMake 3
-* Python 2/3
+* Python 2/3 (only needed if using Python build script)
 * C++11 compliant compiler such as:
- + GCC 4.9
+ + GCC 5.0
  + Clang 3.7
  + MSVC 19.0 (Visual Studio 2015)
  + Intel 15.0
