@@ -3,21 +3,34 @@ python: 3.4
 sudo: required
 
 # Build matrix:
-env:
-  - CC="gcc-4.9" CXX="g++-4.9"
-  - CC="clang-3.7" CXX="clang++-3.7"
-
- # Additional apt-get installs:
+matrix:
+  include:
+    - compiler: gcc
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - g++-5
+      env:
+        - CC="gcc-5" CXX="g++-5"
+    - compiler: clang
+      addons:
+        apt:
+          sources:
+            - llvm-toolchain-precise-3.7
+          packages:
+            - clang-3.7
+      env:
+        CC="clang-3.7" CXX="clang++-3.7"
+ 
+# Addons for all installs:
 addons:
   apt:
     sources:
-      - ubuntu-toolchain-r-test           # GCC 4.9
-      - llvm-toolchain-precise-3.7        # Clang 3.7
       - george-edison55-precise-backports # CMake 3.2
       - boost-latest                      # Boost 1.55 (as of 4/23/2016)
     packages:
-      - g++-4.9
-      - clang-3.7
       - libboost-system1.55-dev
       - libboost-filesystem1.55-dev
       - cmake
@@ -29,6 +42,7 @@ install:
   - pip3 install --upgrade pip
   - pip3 install colorama
 
+# Run builds:
 script:
   - ./example-run-Unix-Makefiles.sh
   - ./build.py -c -b Debug
@@ -36,6 +50,7 @@ script:
   - ./build.py -c -b RelWithDebInfo
   - ./build.py -c -b MinSizeRel
 
+# Notifications:
 notifications:
   email:
     recipients:
