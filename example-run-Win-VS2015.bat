@@ -10,5 +10,5 @@ echo "-> Running project binary..."
 build_Debug\local-install\bin\TestApp
 
 REM Exit:
-pause
+timeout /t 10
 exit 0
