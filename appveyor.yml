@@ -17,12 +17,12 @@ os: Visual Studio 2015
 
 # Install:
 install:
-  - "%PYTHON%\Scripts\pip3.exe install colorama"
+  - "%PYTHON%/Scripts/pip3.exe" install colorama
 
 # Build:
 build_script:
   - cmd: example-run-Win-VS2015.bat
-  - cmd: "%PYTHON%\python.exe build.py -c -b Debug"
-  - cmd: "%PYTHON%\python.exe build.py -c -b Release"
-  - cmd: "%PYTHON%\python.exe build.py -c -b RelWithDebInfo"
-  - cmd: "%PYTHON%\python.exe build.py -c -b MinSizeRel"
+  - cmd: "%PYTHON%/python.exe" build.py -c -b Debug
+  - cmd: "%PYTHON%/python.exe" build.py -c -b Release
+  - cmd: "%PYTHON%/python.exe" build.py -c -b RelWithDebInfo
+  - cmd: "%PYTHON%/python.exe" build.py -c -b MinSizeRel
