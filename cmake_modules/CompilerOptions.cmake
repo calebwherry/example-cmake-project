@@ -44,7 +44,7 @@ if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
   #set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS}")
   #set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS}")
 
-elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
+elseif (CMAKE_CXX_COMPILER_ID MATCHES Clang) # Matches used here since Apple's clang is 'AppleClang' and normal is 'Clang'
 
   # Check version. If empty, warn. If too old, error out:
   if ("${CMAKE_CXX_COMPILER_VERSION}" STREQUAL "")
@@ -73,8 +73,8 @@ elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
   # Check version. If empty, warn. If too old, error out:
   if ("${CMAKE_CXX_COMPILER_VERSION}" STREQUAL "")
     message(WARNING "MSVC compiler version is unknown, proceed at your own risk!")
-  elseif (CMAKE_CXX_COMPILER_VERSION VERSION_LESS 18.0)
-    message(FATAL_ERROR "MSVC compiler version must be at least 18.0 (current version: ${CMAKE_CXX_COMPILER_VERSION})!")
+  elseif (CMAKE_CXX_COMPILER_VERSION VERSION_LESS 19.0)
+    message(FATAL_ERROR "MSVC compiler version must be at least 19.0 (current version: ${CMAKE_CXX_COMPILER_VERSION})!")
   endif()
 
   # Set compiler CMake vars:
@@ -98,8 +98,8 @@ elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Intel")
   # Check version. If empty, warn. If too old, error out:
   if ("${CMAKE_CXX_COMPILER_VERSION}" STREQUAL "")
     message(WARNING "Intel compiler version is unknown, proceed at your own risk!")
-  elseif (CMAKE_CXX_COMPILER_VERSION VERSION_LESS 14.0)
-    message(FATAL_ERROR "Intel compiler version must be at least 14.0 (current version: ${CMAKE_CXX_COMPILER_VERSION})!")
+  elseif (CMAKE_CXX_COMPILER_VERSION VERSION_LESS 15.0)
+    message(FATAL_ERROR "Intel compiler version must be at least 15.0 (current version: ${CMAKE_CXX_COMPILER_VERSION})!")
   endif()
 
   # Set compiler CMake vars:

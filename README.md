@@ -11,7 +11,7 @@ Example CMake Structure for C++ Projects with Python Build Wrapper
 * C++11 compliant compiler such as:
  + GCC 4.9
  + Clang 3.7
- + MSVC 18.0
- + Intel 14.0
+ + MSVC 19.0 (Visual Studio 2015)
+ + Intel 15.0
 
 To support a new compiler, edit the `cmake_modules/CompilerOptions.cmake` and add the new compiler ID along with the needed compiler flags.
