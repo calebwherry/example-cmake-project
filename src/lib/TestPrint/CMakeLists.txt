@@ -29,10 +29,6 @@ add_library(${libName}
 
 # Includes and link libs:
 target_include_directories(${libName} PUBLIC ${libDir})
-target_link_libraries(${libName} LINK_PUBLIC
-	${Boost_FILESYSTEM_LIBRARY}
-	${Boost_SYSTEM_LIBRARY}
-)
 
 # Install artifacts:
 install(TARGETS ${libName} DESTINATION lib)

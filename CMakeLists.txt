@@ -44,46 +44,19 @@ set(${PROJECT_NAME}_VERSION
 
 
 #
-# Variables set based off user input:
-#
-
-# Boost:
-if (BUILD_SHARED_LIBS)
-  set(Boost_USE_STATIC_LIBS OFF)
-else()
-  set(Boost_USE_STATIC_LIBS ON)
-endif()
-
-
-#
 # Print useful CMake info:
 #
 message(STATUS "Project           : ${PROJECT_NAME}")
 message(STATUS "Project version   : ${${PROJECT_NAME}_VERSION}")
 message(STATUS "Build type        : ${CMAKE_BUILD_TYPE}")
 message(STATUS "Shared libs       : ${BUILD_SHARED_LIBS}")
-message(STATUS "Boost static libs : ${Boost_USE_STATIC_LIBS}")
-
-
-#
-# Boost libraries:
-#
-find_package(
-  Boost
-  1.55
-  COMPONENTS 
-    filesystem
-    system
-  REQUIRED
-)
-include_directories(${Boost_INCLUDE_DIRS})
 
 
 #
 # CMake Modules:
 #
 include(cmake_modules/CompilerOptions.cmake)
-include(cmake_modules/Rpath.cmake)
+#include(cmake_modules/Rpath.cmake)
 include(cmake_modules/Utils.cmake)
 
 

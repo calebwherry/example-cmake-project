@@ -14,8 +14,6 @@
 //
 // Compiler includes:
 //
-
-// std/STL:
 #include <iostream>
 #include <string>
 
@@ -33,39 +31,9 @@ namespace test_print
 {
 
   // Test lib function:
-  void testPrintLibFunction()
+  void TestPrint()
   {
-    string libHelloWorld = "Hello, world! (From the TestPrint library)";
-    cout << libHelloWorld << endl;
-  }
-
-  // Print path info:
-  void printPathInfo(const bfs::path& p)
-  {
-
-    // Does p actually exist:
-    if (exists(p))
-    {
-      // Figure out type of p:
-      if (is_regular_file(p))
-      {
-        cout << p << " is a regular file (size: " << file_size(p) << " bytes)." << endl;
-      }
-      else if (is_directory(p))
-      {
-        cout << p << " is a directory." << endl;
-      }
-      else
-      {
-        cout << p << " exists, but is neither a regular file nor a directory." << endl;
-      }
-
-    }
-    else
-    {
-      cout << p << " does not exist." << endl;
-    }
-
+    cout << "Hello, world! (From the TestPrint library)" << endl;
   }
 
 } // namespace test_print

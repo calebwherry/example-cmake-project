@@ -4,46 +4,15 @@
 // \brief   TestPrint lib header.
 ////////////////////////////////////////
 
-
-//
-// Include guards:
-//
-#ifndef TESTPRINT_H
-#define TESTPRINT_H
-
-
-//
-// Local includes:
-//
-////
-
-
-//
-// Compiler includes:
-//
-#include <boost/filesystem.hpp>
-
-
-//
-// Namespaces
-//
-namespace bfs = boost::filesystem;
-
+#pragma once
 
 ///
-/// Library namespace:
+/// Library namespace
 ///
 namespace test_print
 {
 
-  /// Test function
-  void testPrintLibFunction();
-
-  /// Print path info
-  void printPathInfo (
-    const bfs::path&            ///< Path to get info for.
-  );
+  /// Test print
+  __declspec(dllexport) void TestPrint();
 
 } // namespace test_print
-
-#endif // TESTPRINT_H

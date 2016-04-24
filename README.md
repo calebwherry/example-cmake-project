@@ -13,6 +13,5 @@ Example CMake Structure for C++ Projects with Python Build Wrapper
  + Clang 3.7
  + MSVC 18.0
  + Intel 14.0
-* Boost 1.55
 
 To support a new compiler, edit the `cmake_modules/CompilerOptions.cmake` and add the new compiler ID along with the needed compiler flags.
