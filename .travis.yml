@@ -37,11 +37,11 @@ addons:
 
 # Additional installs:
 install:
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; sudo python get-pip.py; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; fi
   - which python
-  - which pip
-  - pip install --upgrade pip
-  - pip install colorama
+  - python --version
+#  - pip install --upgrade pip
+#  - pip install colorama
 
 # Build:
 script:
