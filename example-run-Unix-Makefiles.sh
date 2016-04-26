@@ -2,11 +2,11 @@
 
 # Build project:
 echo "-> Building project..."
-./build.py --clean --build-type="Debug" --build-generator="Unix Makefiles" --static-build
+./build.py --clean --build-type="Debug" --build-generator="Unix Makefiles"
 
 # Run build binary:
 echo "-> Running project binary..."
-./build_Debug/local-install/bin/test-app
+./build_Debug/build/src/app/test-app/Debug/test-app
 
 # Exit:
 exit 0

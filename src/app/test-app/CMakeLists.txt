@@ -20,3 +20,18 @@ target_link_libraries(${appName} LINK_PUBLIC
 
 # Install app:
 install(TARGETS ${appName} RUNTIME DESTINATION bin)
+
+# Add POST_BUILD step on windows to copy dll
+if (WINDOWS AND BUILD_SHARED_LIBS)
+
+add_custom_command(
+  TARGET ${appName}
+  POST_BUILD
+  COMMAND
+    ${CMAKE_COMMAND} -E copy_if_different
+    "${CMAKE_BINARY_DIR}/src/lib/TestPrint/\$\(Configuration\)/TestPrint.dll"
+    "$<TARGET_FILE_DIR:${appName}>"
+  COMMENT Copying DLLs to EXE Build Directory
+)
+
+endif()
