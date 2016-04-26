@@ -6,7 +6,7 @@ echo "-> Building project..."
 
 # Run build binary:
 echo "-> Running project binary..."
-./build_Debug/build/src/app/test-app/Debug/test-app
+./build_Debug/build/src/app/test-app/test-app
 
 # Exit:
 exit 0
