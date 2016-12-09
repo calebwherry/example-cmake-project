@@ -1,6 +1,6 @@
 # example-cmake-project
 
-Learning and setting up a C++ project that builds CMake can be a daunting task sometimes, especially if you have a complicated build structure. This is an example project that hopefully gives you a starting point to do a lot of awesome things in a CMake project from day 1. It has support of Windows, Linux, and Mac and has automated build tests for all 3 with multiple compilers. Adding new compilers and systems should be easy since you can just follow the structure I have laid out.
+Learning and setting up a C++ project that uses CMake can be a daunting task sometimes, especially if you have a complicated build structure. This is an example project that gives you a starting point to do a lot of awesome things in a CMake project from day 1. It has support of Windows, Linux, and Mac and has automated builds for all 3 platforms with multiple compilers. Adding new compilers and systems should be easy since you can just follow the structure I have laid out.
 
 Linux + Mac (Travis CI): [![Build Status](https://travis-ci.org/calebwherry/example-cmake-project.svg?branch=master)](https://travis-ci.org/calebwherry/example-cmake-project)
 
